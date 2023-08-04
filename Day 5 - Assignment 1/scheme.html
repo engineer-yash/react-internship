@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes with Code</title>
+</head>
+<body>
+    <script>
+        async function run(form){
+            var url="https://api.mfapi.in/mf";
+            var myobject = await(await fetch(url)).json();
+            var code = form.scheme.value;
+
+            if(code == ""){
+                document.getElementById("msg").innerHTML = "<font style='color:red;'>Please Enter Scheme Code</font>";
+            
+            }else{
+
+                for(var i=0; i < myobject.length; i++){
+
+                if(myobject[i]["schemeCode"] == code){
+                    document.getElementById("msg").innerHTML = myobject[i]["schemeName"];
+                    break;
+
+                }else{
+                    document.getElementById("msg").innerHTML = "<font style='color:red;'>Scheme Not Found</font>";
+                }
+            }
+            document.getElementById("schemes").innerHTML = "Total Number of Schemes are: "+myobject.length;
+            }
+        }
+    </script>
+    <p id="schemes"></p>
+    <form>
+        Enter Scheme Code: <input type="number" name="scheme" placeholder="Enter Valid Code"><br>
+        <input type="submit" onclick="run(this.form); return false;" value="Show Fund">
+    </form>
+    <p id="msg"></p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //af no arg/parm and no return value
+        let one = () =>{
+            document.write("I am the one<br>");
+        }
+        one();
+
+        //af with arg/parm and no return value
+        let two = (number) =>{
+            document.write(number+"<br>");
+        }
+        two(25);
+
+        //af no arg/parm and with return value
+        let three = () =>{
+            return "hello i am third<br>";
+        }
+        let abc = three();
+        document.write(abc);
+
+        //af with arg/parm and with return value
+        let four = (a,b) =>{
+            return "Substraction of "+a+" and "+b+" is "+(a-b);
+        }
+        let xyz = four(50,25);
+        document.write(xyz);
+    </script>
+</body>
+</html>

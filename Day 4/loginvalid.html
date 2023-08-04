@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <script>
+        function done(form) {
+            var email = form.email.value;
+            var password = form.password.value;
+            var emails = ['a@gmail.com','b@gmail.com','c@gmail.com'];
+            var passwords = ['123','456','789'];
+
+            if(email == "" || password == ""){
+                if(email == ""){
+                    document.getElementById("msg").innerHTML ="<font style='color:red;'>Email is required</font>";
+                }else if(password == ""){
+                    document.getElementById("msg").innerHTML ="<font style='color:red;'>Password is required</font>";
+                }else{
+                    document.getElementById("msg").innerHTML ="<font style='color:red;'>Email and Password is required</font>";
+                }
+            }else{
+            for(var i = 0; i < emails.length; i++){
+                if(email == emails[i] && password == passwords[i]){
+                    document.getElementById("msg").innerHTML ="<font style='color:green;'>Login Success</font>";
+                    break;
+                }else{
+                    document.getElementById("msg").innerHTML ="<font style='color:red;'>Invalid Email and Password</font>";
+                }
+            }
+        }
+    }
+    </script>
+    <form>
+        <label for="email">Username:</label>
+        <input type="email" name="email" id="email" placeholder="Email"><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Password"><br>
+        <input type="submit" onclick="done(this.form); return false;" value="Login">
+    </form>
+    <p id="msg"></p>
+</body>
+</html>

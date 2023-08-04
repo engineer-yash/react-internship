@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pincode</title>
+    </head>
+    <body>
+        <script>
+            if(navigator.onLine) {
+            } else {
+                document.write("You are offline");
+            }
+        async function done(form) {
+            var pincode = form.pincode.value;
+            var url = "https://api.postalpincode.in/pincode/" + pincode;
+            var myobject = await (await fetch(url)).json();
+            if(myobject){
+                if(pincode == "") {
+                document.getElementById("msg").innerHTML = "<font style='color:red;'>Field cannot be empty. Please Enter Pincode</font>";
+            } else {
+                var cases = myobject[0]["PostOffice"];
+                document.getElementById("msg").innerHTML = "<h1>Post Office Details</h1>";
+                var HTML = "";
+                for (var i = 0; i < cases.length; i++) {
+                    HTML += "<p>" + cases[i]["Name"] + "</p>";
+                }
+                document.getElementById("msg1").innerHTML = HTML;
+
+            }
+        }else {
+            document.getElementById("msg").innerHTML = "<font style='color:red;'>Invalid Pincode</font>";
+        }
+}
+        </script>
+        <form>
+            <label for="pincode">Pincode:</label>
+            <input type="text" name="pincode" id="pincode" placeholder="Enter Pincode">
+            <br>
+            <input type="submit" onclick="done(this.form); return false;" value="Submit">
+        </form>
+        <p id="msg"></p>
+        <p id="msg1"></p>
+    </body>
+</html>

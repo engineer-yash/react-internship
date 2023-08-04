@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function no arg no return value
+        function one(){
+            document.write("I am function one<br>");
+        }
+        one();
+
+        //function with arg but no return value
+        function two(num){
+            document.write(num+"<br>");
+        }
+        two(25);
+
+        //function no args with return value
+        function three(){
+            return "Hey There<br>";
+        }
+        //we need to display it by this
+        let abc = three()
+        document.write(abc);
+
+        //function with arg and with return value
+        function four(a,b){
+            return a+b;
+        }
+        //again we need to print return value
+        let xyz = four(5,5);
+        document.write(xyz);
+    </script>
+</body>
+</html>

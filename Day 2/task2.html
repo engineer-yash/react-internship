@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+</head>
+<body>
+<table class='table table-striped table-hover'>
+    <tr>
+        <th>Date</th>
+        <th>New Confirmed</th>
+        <th>New Recovered</th>
+        <th>Deaths</th>
+        <th>Total Cases</th>
+    </tr>
+</table>
+    <script>
+       
+         async function load(){
+            let url = "https://data.covid19india.org/data.json";
+            let myobject = await(await fetch(url)).json();
+            let cases = myobject["cases_time_series"];
+            let table = document.querySelector("table");
+            for(let i=0;i<cases.length;i++){
+                let row = table.insertRow();
+                let cell1 = row.insertCell();
+                let cell2 = row.insertCell();
+                let cell3 = row.insertCell();
+                let cell4 = row.insertCell();
+                let cell5 = row.insertCell();
+                cell1.innerHTML = cases[i].date;
+                cell2.innerHTML = cases[i].dailyconfirmed;
+                cell3.innerHTML = cases[i].dailyrecovered;
+                cell4.innerHTML = cases[i].dailydeceased;
+                cell5.innerHTML = cases[i].totalconfirmed;
+            }
+         }
+         function showNoDataHere(){
+            let table = document.querySelector("table");
+            let row = table.insertRow();
+            let cell = row.insertCell();
+            cell.innerHTML = "No Data Here";
+        }
+       if(navigator.onLine){
+           load();
+       }
+       else{
+           showNoDataHere();
+       }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

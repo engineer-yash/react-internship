@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Data Printing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+<body>
+    <script>
+        let myobject = {"gujarat" :"ahmedabad", "rajasthan":"jaipur","maharastra":"mumbai"};
+
+        for(i in myobject){
+            document.write(i+"<br>"); // key
+        }
+
+        for(i in myobject){
+            document.write(myobject[i]+"<br>"); //values
+        }
+
+        //for both
+        for(i in myobject){
+            document.write("State is "+i+ " And City is "+myobject[i]+"<br>")
+        }
+
+        let cases = {"ahmedabad":[100,20,5], "surat":[200,100,10], "rajkot":[150,50,3]};
+        for(i in cases){
+            document.write(i+ " New Cases:" +cases[i][0]+ " Recovered Cases:" +cases[i][1]+ " Deaths:"+cases[i][2]+"<br>")
+        }
+
+        //Task of the day
+        document.write("<table class='table table-striped table-hover'>");
+        document.write("<style>table,th,td{border:2px solid black;}</style>");
+        document.write("<tr><th>State</th><th>New Cases</th><th>Recovered Cases</th><th>Deaths</th></tr>");
+        for(i in cases){
+            document.write("<tr><td>"+i+"</td><td>"+cases[i][0]+"</td><td>"+cases[i][1]+"</td><td>"+cases[i][2]+"</td></tr>");
+        }
+        document.write("</table>");
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
