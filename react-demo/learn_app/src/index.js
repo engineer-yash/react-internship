@@ -8,6 +8,8 @@ import ApiFetch,{Covid19,NewFunc} from './api.js';
 import ParentComponent from "./ParentComponent";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GroupExample from "./Cards";
+import Pincode from "./pincode"
+import Demo from "./assignment2";
 
 
 ReactDOM.render(
@@ -26,5 +28,7 @@ ReactDOM.render(
 <ApiFetch/>
 <Covid19/>
 <ParentComponent/> */}
-<GroupExample/>
+{/* <GroupExample/> */}
+{/* <Pincode/> */}
+<Demo/>
 </React.StrictMode>, document.getElementById('root'));
