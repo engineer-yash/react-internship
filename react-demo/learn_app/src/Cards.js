@@ -49,7 +49,7 @@ function GroupExample() {
                         ......
                       </Card.Text>
                       <Button className="primary" href={value.readMoreUrl}>
-                        Read More
+                        Click Me
                       </Button>
                     </Card.Body>
                     <br></br>

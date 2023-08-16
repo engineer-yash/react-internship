@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 
+//functional components
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>Marvel App</h1>
     </div>
   );
@@ -24,6 +25,8 @@ function Sub(){
     </div>
   );
 }
+
+//class components
 class OyDiv extends React.Component{
   render(){
       return(
@@ -38,7 +41,8 @@ class Add2 extends React.Component{
     let a = 800, b = 100;
     return(
       <div>
-        <h2>Addition of {a} and {b} is {a+b}</h2>
+        <h2>Addition of {a}
+         and {b} is {a+b}</h2>
       </div>
     );
   }

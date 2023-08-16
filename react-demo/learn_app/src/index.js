@@ -11,7 +11,6 @@ import GroupExample from "./Cards";
 import Pincode from "./pincode"
 import Demo from "./assignment2";
 
-
 ReactDOM.render(
 <React.StrictMode>
 {/* <App/>
@@ -26,8 +25,8 @@ ReactDOM.render(
 <KeyValue/>
 <NewFunc/>
 <ApiFetch/>
-<Covid19/>
-<ParentComponent/> */}
+<Covid19/> */}
+{/* <ParentComponent/> */}
 {/* <GroupExample/> */}
 {/* <Pincode/> */}
 <Demo/>

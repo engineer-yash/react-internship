@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Form to Variable</title>
+    <script>
+    function Done(form){
+        let uname = form.username.value;
+        let uage = form.userage.value;
+        document.getElementById("result").innerHTML = "Name: "
+         + uname + "<br>Age: " + uage;
+            }
+    </script></head>
+<body>
+ <form>
+  <input type="text" name="username" placeholder="Name"><br>
+  <input type="text" name="userage" placeholder="Age"><br>
+  <input onclick="Done(this.form); return false;" type="submit">
+ </form>
+   <p id="result"></p>
+</body>
+</html>

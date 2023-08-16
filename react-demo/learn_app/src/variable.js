@@ -16,24 +16,24 @@ function DiplayAll() {
     </div>
   );
 }
-const data2 = {"Key1":"value1","Key2":"value2"};
-
+const data2 = { Key1: "value1", Key2: "value2" };
 function KeyValue() {
-    return(
-        <div>
-            <table border='1px' width='50%'>
-            <th>Keys</th><th>Values</th>{
-                Object.keys(data2).map(
-                    (data) =>{
-                        return <tr><td>{data}</td><td>{data2[data]}</td></tr>
-                    }
-                )
-            }
-            </table>
-        </div>
-    )
+  return (
+    <div>
+      <table border='1px' width={200}>
+        <th>Keys</th>
+        <th>Values</th>
+        {Object.keys(data2).map((data) => {
+          return (
+            <tr>
+              <td>{data}</td>
+              <td>{data2[data]}</td>
+            </tr>
+          );
+        })}
+      </table>
+    </div>
+  );
 }
-
 export default Display;
-export { DiplayAll,KeyValue};
-
+export { DiplayAll, KeyValue };

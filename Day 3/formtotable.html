@@ -1,47 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form to Table</title>
-</head>
-<body>
-    <div class="container">
-    <form>
-        <label>Name:</label>
-        <input type="text" name="uname"><br>
-        <label>Email:</label>
-        <input type="email" name="email"><br>
-        <label>Phone:</label>
-        <input type="number" name="phone"><br>
-        <label>Address:</label>
-        <textarea name="address" placeholder="Enter Address"></textarea><br>
-        <label>Gender:</label>
-        <input type="radio" name="gender" value="Male">Male
-        <input type="radio" name="gender" value="Female">Female<br>
-        <label>City:</label>
-        <select name="city">
-            <option value="Ahmedabad">Ahmedabad</option>
-            <option value="Pune">Pune</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Nashik">Nashik</option>
-        </select><br>
-        <input type="submit" name="submit" onclick="done(this.form); return false;" value="Submit">
-    </form>
-    </div>
-    <div id="table">
-    </div>
-    <script>
-        function done(form) {
-            var name = form.uname.value;
-            var email = form.email.value;
-            var phone = form.phone.value;
-            var address = form.address.value;
-            var gender = form.gender.value;
-            var city = form.city.value;
-
-            document.getElementById("table").innerHTML = "<h1>User Data</h1><table border='1px'><tr><th>Name:</th><td>"+name+"</td></tr><tr><th>Email:</th><td>"+email+"</td></tr><tr><th>Phone:</th><td>"+phone+"</td></tr><tr><th>Address:</th><td>"+address+"</td></tr><tr><th>Gender:</th><td>"+gender+"</td></tr><tr><th>City:</th><td>"+city+"</td></tr></table>"
-        }
-    </script>
-</body>
-</html>
+<script>
+const fruits = ['apple', 'banana', 'orange'];
+fruits.push('grape');    // Add 'grape' to end
+fruits.pop();            // Remove last item ('grape')
+fruits[1] = 'kiwi';      // Change value at index 1
+const numFruits = fruits.length;  // Get array length
+</script>
